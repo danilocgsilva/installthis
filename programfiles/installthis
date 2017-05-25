@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ ! -d programfiles ]; then
+    echo I could not find any \'programfiles\' directory in this folder. Are you in the right place?
+    exit
+fi
+
+if [ ! -w /usr/local/bin ]; then
+    echo I have not permission to write to /ust/local/bin folder. Please, execute as sudo or allow /usr/local/bin to be writable for the conventional computer user.
+    exit
+fi
+
+chmod +x programfiles/*
+
+cp -r programfiles/* /usr/local/bin
+
+echo Done!
